@@ -1,12 +1,12 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '^'
+const prefix = '*'
  
  
  
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Nasa`,"https://www.twitch.tv/dggamingbot")
+client.user.setGame(`this bot for NT Server Only `,"https://www.twitch.tv/dggamingbot")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -109,7 +109,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    var prefix = "^";
+    var prefix = "*";
    
         if (message.author.id === client.user.id) return;
         if (message.guild) {
@@ -188,7 +188,7 @@ message.channel.sendEmbed(id);
 
 client.on('message', message => {
                  if (!message.channel.guild) return;
-         if(message.content =='^members')
+         if(message.content =='*members')
          var kayan = new Discord.RichEmbed()
          .setThumbnail(message.author.avatarURL)
          .setFooter(message.author.username, message.author.avatarURL)
@@ -421,7 +421,7 @@ client.on('message',async message => {
 });
 
   client.on('message', msg => {
-  if(msg.content === '^hide') {
+  if(msg.content === '*hide') {
     msg.guild.channels.forEach(c => {
       c.overwritePermissions(msg.guild.id, {
         SEND_MESSAGES: false,
@@ -433,7 +433,7 @@ client.on('message',async message => {
 })   
 
 client.on('message', msg => {
-  if(msg.content === '^unhide') {
+  if(msg.content === '*unhide') {
     msg.guild.channels.forEach(c => {
       c.overwritePermissions(msg.guild.id, {
         SEND_MESSAGES: true,
@@ -455,7 +455,7 @@ client.on('message', message => {
 });
 
 client.on('message',async message => {
-  if(message.content === '^unbanall') {
+  if(message.content === '*unbanall') {
     var user = message.mentions.users.first();
     if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('❌|**`ADMINISTRATOR`لا توجد لديك صلاحية `**');
     if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return message.reply("**I Don't Have ` BAN_MEMBERS ` Permission**");
@@ -477,11 +477,11 @@ client.on('message',async message => {
   });
 
 client.on("message", message => {
-            if(message.content.startsWith("^app")) { /// Mal , Codes //// O҉Z҉X҉ 
+            if(message.content.startsWith("*app")) { /// Mal , Codes //// O҉Z҉X҉ 
         if(!message.channel.guild) return;////////غير البرفكس
                 if(message.author.bot) return;
         let channel = message.guild.channels.find("name", "التقديمات")//////dont change any thing
-            if(!channel) return message.reply("**لانشاء روم التقديمات ^room1 من فضلك اكتب الامر**")/////////dont change
+            if(!channel) return message.reply("**لانشاء روم التقديمات *room1 من فضلك اكتب الامر**")/////////dont change
             if(channel) {
             message.channel.send( message.member + ', **:timer:**').then( (m) =>{
               m.edit( message.member + ', **اسمك الحقيقى بالكامل **' )
@@ -499,7 +499,7 @@ client.on("message", message => {
                           var age = m2.content;
                           m2.delete()
                           message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                            m.edit( message.member + ', **هل تتعهد بعدم خيانة أي عضو من السيرفر |أخيرا| لا يهمنا التفاعل يهمنا فقط الإنضباط  🎙**' )
+                            m.edit( message.member + ', **اعطينا مثال عن اي فعل لأربي خاص بك .؟**' )
                             setTimeout(() => {
                               m.delete()
                             }, 10000);
@@ -508,7 +508,7 @@ client.on("message", message => {
                                 var ask = m3.content;
                                 m3.delete();
                                 message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                                  m.edit( message.member + ', **هل سوف تتعهد بوضعك لشعار السيرفر في الجانب الأيسر من إسمك ؟!  📑**' )
+                                  m.edit( message.member + ', **اعطينا 5 قواعد  للرول بلاي مع الامثله .  📑**' )
                                   setTimeout(() => {
                                     m.delete()
                                   }, 10000);
@@ -517,7 +517,7 @@ client.on("message", message => {
                                       var ask2 = m4.content;
                                       m4.delete();
                                       message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                                        m.edit( message.member + ', **لماذا يجب علينا ان نقبلك ؟ اعطنا سبباً وجيهاً **' )
+                                        m.edit( message.member + ', **ما الشئ الذي يميزك ك اداري عن غيرك .؟ **' )
                                         m.channel.awaitMessages( m1 => m1.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m5) => {
                                             m5 = m5.first();
                                             var ask3 = m5.content;
@@ -529,8 +529,8 @@ client.on("message", message => {
                         .setTitle(`**تقديم ادارة** [__**${message.guild.name}**__]`)
                         .addField('**`الاسم`**', `${name}` , true)
                         .addField('**`العمر`**', `${age}` , true)
-                        .addField('**`هل تتعهد بعدم خيانة أي عضو من السيرفر |أخيرا| لا يهمنا التفاعل يهمنا فقط الإنضباط`**',`${ask}`)
-                        .addField('**`هل سوف تتعهد بوضعك لشعار السيرفر في الجانب الأيسر من إسمك ؟`**',`${ask2}`)
+                        .addField('**`الاربي`**',`${ask}`)
+                        .addField('**`القواعد`**',`${ask2}`)
                         .addField('**`لماذا يجب علينا قبوله ؟`**',`${ask3}`)
                         .setFooter(message.author.username,'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')
                         channel.send(embed)
@@ -554,7 +554,7 @@ client.on("message", message => {
 }
         });
         client.on('message', message=>{
-            if(message.content.startsWith("^room1")) {
+            if(message.content.startsWith("*room1")) {
             if(!message.channel.guild) return;
                 if(message.author.bot) return;
                 if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply("**تحتاج الى `MANAGE_CHANNELS`**");
@@ -571,7 +571,7 @@ client.on("message", message => {
   let mention = message.mentions.members.first();
   let role = message.content.split(" ").slice(2).join(" ");
   let mySupport = message.guild.roles.find('name',role);
-  if(message.content.startsWith("^acc")) {
+  if(message.content.startsWith("*acc")) {
     let acRoom = message.guild.channels.find('name', 'القبول-الرفض');
     if(!acRoom) return message.reply("^room2 من فضلك انشاء روم **القبول-الرفض** او اكتب الامر");
     if(acRoom) {
@@ -589,10 +589,10 @@ client.on("message", message => {
 });
 client.on('message',async message => {
   let mention = message.mentions.members.first();
-  if(message.content.startsWith("/de")) {
+  if(message.content.startsWith("*de")) {
   if(!message.channel.guild) return;
   let acRoom = message.guild.channels.find('name', 'القبول-الرفض');
-  if(!acRoom) return message.reply("^room2 من فضلك انشاء روم **القبول-الرفض** او اكتب الامر");
+  if(!acRoom) return message.reply("*room2 من فضلك انشاء روم **القبول-الرفض** او اكتب الامر");
   if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return;
   if(!mention) return message.reply("منشن شخص");
  
@@ -600,7 +600,7 @@ client.on('message',async message => {
   }
 });
           client.on('message', message=>{
-            if(message.content.startsWith("^room2")) {
+            if(message.content.startsWith("*room2")) {
          if(!message.channel.guild) return;
                 if(message.author.bot) return;
                 if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply("**تحتاج الى `MANAGE_CHANNELS`**");
@@ -618,7 +618,7 @@ client.on('message',async message => {
 client.on('message',async message => {
     const moment = require('moment');
 const ms = require('ms')
-    var prefix = '^' //بريفكس البوت
+    var prefix = '*' //بريفكس البوت
   var time = moment().format('Do MMMM YYYY , hh:mm');
   var room;
   var title;
@@ -736,7 +736,7 @@ client.on('message' , message => {
 
 
 	client.on("message", msg => {
-  if(msg.content === '^' + "id") {
+  if(msg.content === '*' + "id") {
       const embed = new Discord.RichEmbed();
   embed.addField("🔱| اسم الحساب :", `${msg.author.username}#${msg.author.discriminator}`, true)
           .addField("🆔| الاي دي :", `${msg.author.id}`, true)
@@ -754,7 +754,7 @@ client.on('message' , message => {
 })
 
 client.on('message', message => {
-    if (message.content === "^server") {
+    if (message.content === "*server") {
         if (!message.channel.guild) return
         var verificationLevel = message.guild.verificationLevel;
         const verificationLevels = ['None','Low','Meduim','High','Extreme'];
@@ -780,7 +780,7 @@ client.on('message', message => {
     }); 
 
 client.on('message', message => {
-            if (message.content.startsWith("^rules")) {
+            if (message.content.startsWith("*rules")) {
      let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)
 .addField('     اولا ' ,' ممنوع السب ')
@@ -799,7 +799,7 @@ client.on('message', message => {
 
 const hero = new Discord.Client({disableEveryone: true, maxMessagesCache: 1});
 const as = require('array-sort');
-const config = { prefix: "^", token: "NTM5MDkyNDM4Mzg0NTA4OTI4.Dy-0jQ.I9f6KbCM_b2_RdQK4WGTIfEp6Io" };
+const config = { prefix: "*", token: "NTM5NTc1NTY2NjYwMTQxMTA2.DzEYAg.baRndTCocaluuhvDFSZ55grQTzk" };
 const tpoints = {};
 const vpoints = {};
 hero.config = config;
@@ -832,7 +832,7 @@ hero.on('message',async message => {
     let _topVoice = as(_voiceArray, 'points', { reverse: true });;
     let topRoyale = new Discord.RichEmbed();
     topRoyale.setAuthor(message.author.username, message.author.avatarURL);
-    topRoyale.setTitle('^ " top');
+    topRoyale.setTitle('* " top');
     //topRoyale.setThumbnail(message.guild.iconURL);
     topRoyale.addField(`**TOP 5 TEXT 💬**`, _topText.map(r => `**\`.${_textPointer++}\` | <@${r.id}> \`XP: ${r.points}\`**`).slice(0, 5), true);
     topRoyale.addField(`**TOP 5 VOICE 🎙**`, _topVoice.map(r => `**\`.${_voicePointer++}\` | <@${r.id}> \`XP: ${r.points}\`**`).slice(0, 5), true);
@@ -877,9 +877,9 @@ hero.on('message',async message => {
                         if (message.content.startsWith(prefix + "close")) {
         if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`لا يمكنك استخدام أمر الإغلاق خارج روم التذكره.`);
 
-        message.channel.send(` ***هل أنت متأكد من إغلآق التذكرة ؟, Type ^close to close the ticket., لديك 10 ثوآني للتأكيد .***`)
+        message.channel.send(` ***هل أنت متأكد من إغلآق التذكرة ؟, Type *close to close the ticket., لديك 10 ثوآني للتأكيد .***`)
             .then((m) => {
-                message.channel.awaitMessages(response => response.content === '^close', {
+                message.channel.awaitMessages(response => response.content === '*close', {
                         max: 1,
                         time: 10000,
                         errors: ['time'],
@@ -934,8 +934,8 @@ client.on('guildMemberRemove', member => {
     channel.send({embed : embed});
     })
 
-const adminprefix = "^vip";
-const devs = ['520347455792087040'];
+const adminprefix = "*vip";
+const devs = ['329364418938798081'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
@@ -961,7 +961,7 @@ if (message.content.startsWith(adminprefix + 'setT')) {
 });
 
 client.on('message', message => {
-    if (message.content === ('^bot')) {
+    if (message.content === ('*bot')) {
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
@@ -972,7 +972,7 @@ client.on('message', message => {
             .addField('**Channels**📝 :' , `[ ${client.channels.size} ]` , true)
             .addField('**Users**🔮 :' ,`[ ${client.users.size} ]` , true)
             .addField('**Bot Name**🔰 :' , `[ ${client.user.tag} ]` , true)
-            .addField('**Bot Owner**👑 :' , `[<@520347455792087040>]` , true)
+            .addField('**Bot Owner**👑 :' , `[<@329364418938798081>]` , true)
             .setFooter(message.author.username, message.author.avatarURL)
     })
 }
@@ -985,30 +985,30 @@ client.on("message", message => {
       .setColor("#111111")
       .setDescription(`
 **
-^bc 
-^user
-^avatar
-^bcc 
-^kick 
+*bc 
+*user
+*avatar
+*bcc 
+*kick 
 inviteserver  
-^cm 
-^om  
-^mute  
-^unmute 
-^clear + Number
-^hide
-^unhide
-^date
-^unbanall 
-^ban 
-^app 
-^gstart 
-^server 
-^rules 
-^new  
-^close  
-^top 
-^bot
+*cm 
+*om  
+*mute  
+*unmute 
+*clear + Number
+*hide
+*unhide
+*date
+*unbanall 
+*ban 
+*app 
+*gstart 
+*server 
+*rules 
+*new  
+*close  
+*top 
+*bot
 **
  `)
    message.channel.sendEmbed(embed)
