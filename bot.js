@@ -846,10 +846,10 @@ hero.on('message',async message => {
     
                         if (message.content.startsWith(prefix + "new")) {
         const reason = message.content.split(" ").slice(1).join(" ");
-        if (!message.guild.roles.exists("name", "STAFF")) return message.channel.send(`  \`STAFF` يجب عليك عمل رتبه بأسم . `);
+        if (!message.guild.roles.exists("name", "STAFF")) return message.channel.send(`  \`Support Team` يجب عليك عمل رتبه بأسم . `);
         if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(`تذكره موجوده بالفعل .`);
         message.guild.createChannel(`ticket-${message.author.id}`, "text").then(c => {
-            let role = message.guild.roles.find("name", "STAFF");
+		    let role = message.guild.roles.find("name", "Support Team");
             let role2 = message.guild.roles.find("name", "@everyone");
             c.overwritePermissions(role, {
                 SEND_MESSAGES: true,
