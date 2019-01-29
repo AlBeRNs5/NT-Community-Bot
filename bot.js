@@ -842,14 +842,14 @@ hero.on('message',async message => {
   }
 });
 
- client.on("message", (message) => {
+     client.on("message", (message) => {
     
                         if (message.content.startsWith(prefix + "new")) {
         const reason = message.content.split(" ").slice(1).join(" ");
-        if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`  \`Support Team` يجب عليك عمل رتبه بأسم . `);
-        if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(`تذكره موجوده بالفعل .`);
+        if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(` \`Support Team\` يجب عليك عمل رتبه بأسم واعطائها للبوت  والشخص الذي يستحكم بالتيكيت .`);
+        if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(`You already have a ticket open.`);
         message.guild.createChannel(`ticket-${message.author.id}`, "text").then(c => {
-		    let role = message.guild.roles.find("name", "Support Team");
+            let role = message.guild.roles.find("name", "Support Team");
             let role2 = message.guild.roles.find("name", "@everyone");
             c.overwritePermissions(role, {
                 SEND_MESSAGES: true,
@@ -896,7 +896,6 @@ hero.on('message',async message => {
     }
 
 });
-
 
 const adminprefix = "*vip";
 const devs = ['329364418938798081'];
