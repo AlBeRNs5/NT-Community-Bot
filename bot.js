@@ -6,7 +6,7 @@ const prefix = '*'
  
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`this bot for NT Server Only `,"https://www.twitch.tv/dggamingbot")
+client.user.setGame(`NT `,"https://www.twitch.tv/dggamingbot")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -499,7 +499,7 @@ client.on("message", message => {
                           var age = m2.content;
                           m2.delete()
                           message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                            m.edit( message.member + ', **اعطينا مثال عن اي فعل لأربي خاص بك .؟**' )
+                            m.edit( message.member + ', **كم لفلك الصوتي و الكتابي؟ **' )
                             setTimeout(() => {
                               m.delete()
                             }, 10000);
@@ -508,7 +508,7 @@ client.on("message", message => {
                                 var ask = m3.content;
                                 m3.delete();
                                 message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                                  m.edit( message.member + ', **اعطينا 5 قواعد  للرول بلاي مع الامثله .  📑**' )
+                                  m.edit( message.member + ', **كم عضو دخلت السيرفر؟ .  📑**' )
                                   setTimeout(() => {
                                     m.delete()
                                   }, 10000);
@@ -517,7 +517,7 @@ client.on("message", message => {
                                       var ask2 = m4.content;
                                       m4.delete();
                                       message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                                        m.edit( message.member + ', **ما الشئ الذي يميزك ك اداري عن غيرك .؟ **' )
+                                        m.edit( message.member + ', **لمتي تقضي على الديسكورد؟ **' )
                                         m.channel.awaitMessages( m1 => m1.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m5) => {
                                             m5 = m5.first();
                                             var ask3 = m5.content;
@@ -529,9 +529,9 @@ client.on("message", message => {
                         .setTitle(`**تقديم ادارة** [__**${message.guild.name}**__]`)
                         .addField('**`الاسم`**', `${name}` , true)
                         .addField('**`العمر`**', `${age}` , true)
-                        .addField('**`الاربي`**',`${ask}`)
-                        .addField('**`القواعد`**',`${ask2}`)
-                        .addField('**`لماذا يجب علينا قبوله ؟`**',`${ask3}`)
+                        .addField('**`كم لفلك الصوتي و الكتابي؟  `**',`${ask}`)
+                        .addField('**`كم عضو دخلت السيرفر؟`**',`${ask2}`)
+                        .addField('**`لمتي تقضي على الديسكورد؟`**',`${ask3}`)
                         .setFooter(message.author.username,'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')
                         channel.send(embed)
                         }, 2500);
@@ -897,42 +897,6 @@ hero.on('message',async message => {
 
 });
 
-client.on('guildMemberAdd', member => {
-    let memberavatar = member.user.avatarURL
-    let embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setThumbnail(memberavatar)
-        .addField('Hello Dude' , `Welcome to the server **${member}**`)
-        .addField('User Id :', "**[" + `${member.id}` + "]**" )
-                .addField(' Member Number',`${member.guild.memberCount}`)
-
-                  .addField("Name:",`<@` + `${member.id}` + `>`, true)
-
-                                     .addField(' Server', `${member.guild.name}`,true)
-.setFooter(member.user.username,'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')
-
-
-        .setTimestamp()
-
-    member.createDM().then(function (channel) {
-return channel.send(embed)
-    }
-    )});
-
-client.on('guildMemberRemove', member => {
-        var embed = new Discord.RichEmbed()
-        .setAuthor(member.user.username, member.user.avatarURL)
-        .setThumbnail(member.user.avatarURL)
-        .setTitle(`بس بعرف وين رحت؟؟؟ :raised_hand::skin-tone-1: :pensive:`)
-        .setDescription(`مع السلامه تشرفنا بك :raised_hand::skin-tone-1: :pensive: `)
-        .addField('👤   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
-        .setColor('RED')
-        .setFooter(`====اتمنا لك الاستمتاع====`, 'https://cdn.discordapp.com/attachments/397818254439219217/399292026782351381/shy.png')
-    
-    var channel =member.guild.channels.find('name', 'welcome')
-    if (!channel) return;
-    channel.send({embed : embed});
-    })
 
 const adminprefix = "*vip";
 const devs = ['329364418938798081'];
