@@ -846,7 +846,7 @@ hero.on('message',async message => {
     
                         if (message.content.startsWith(prefix + "new")) {
         const reason = message.content.split(" ").slice(1).join(" ");
-        if (!message.guild.roles.exists("name", "STAFF")) return message.channel.send(`  \`Support Team` يجب عليك عمل رتبه بأسم . `);
+        if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`  \`Support Team` يجب عليك عمل رتبه بأسم . `);
         if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(`تذكره موجوده بالفعل .`);
         message.guild.createChannel(`ticket-${message.author.id}`, "text").then(c => {
 		    let role = message.guild.roles.find("name", "Support Team");
